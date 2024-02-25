@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _3_3
 {
-    public abstract class Dad_class
+    public abstract class Dad_class : IBaseInterface
     {
         public abstract void getmid();
         public abstract void print();

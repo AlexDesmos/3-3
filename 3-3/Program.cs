@@ -12,49 +12,69 @@ namespace _3_3
         {
             Console.WriteLine("Write 'true' if you want to make array by yourself, 'false' if random:");
             bool person = bool.Parse(Console.ReadLine());
-            Console.WriteLine("Write type of the array:");
-            string input = Console.ReadLine();
-            if (input == "One_dimensional")
-            {
-                Console.WriteLine("Write length of your array:");
-                int length = int.Parse(Console.ReadLine());
+            
 
-                One_dimensional one_dimensional = new One_dimensional(person, length);
+                Console.WriteLine("Write length of your array:");
+                int one_length = int.Parse(Console.ReadLine());
+
+                One_dimensional one_dimensional = new One_dimensional(person, one_length);
 
 
                 
                 one_dimensional.third();
 
                 Console.WriteLine("Write length of your array:");
-                length = int.Parse(Console.ReadLine());
-                one_dimensional.recreation(person, length);
+                one_length = int.Parse(Console.ReadLine());
+                one_dimensional.recreation(person, one_length);
 
-            }
-            else if (input == "Two_dimensional")
+            
+  
+            
+            Console.WriteLine("Write length of your array:");
+            int two_length = int.Parse(Console.ReadLine());
+            Console.WriteLine("Write width of your array:");
+            int two_width = int.Parse(Console.ReadLine());
+            Two_dimensional two_dimensional = new Two_dimensional(person, two_length, two_width);
+            two_dimensional.second();
+            Console.WriteLine("Write length of your array:");
+            two_length = int.Parse(Console.ReadLine());
+            Console.WriteLine("Write width of your array:");
+            two_width = int.Parse(Console.ReadLine());
+            two_dimensional.recreation(person, two_length, two_width);
+            
+            
+            Console.WriteLine("Write width of your array:");
+            int step_width = int.Parse(Console.ReadLine());
+            Step_dimensional step_dimensional = new Step_dimensional(person, step_width);
+            step_dimensional.third();
+            Console.WriteLine("Write width of your array:");
+            step_width = int.Parse(Console.ReadLine());
+            step_dimensional.recreation(person, step_width);
+            
+            IPrinter[] mass = new IPrinter[4];
+            IBaseInterface[] mass1 = new IBaseInterface[3];
+            mass[0] = one_dimensional;
+            mass1[0] = one_dimensional;
+            mass[1] = two_dimensional;
+            mass1[1] = two_dimensional;
+            mass[2] = step_dimensional;
+            mass1[2] = step_dimensional;
+            mass[3] =new Week();
+            for (int i = 0; i < mass.Length; i++)
             {
-                Console.WriteLine("Write length of your array:");
-                int length = int.Parse(Console.ReadLine());
-                Console.WriteLine("Write width of your array:");
-                int width = int.Parse(Console.ReadLine());
-
-                Two_dimensional two_dimensional = new Two_dimensional(person, length, width);
-                two_dimensional.second();
-                Console.WriteLine("Write length of your array:");
-                length = int.Parse(Console.ReadLine());
-                Console.WriteLine("Write width of your array:");
-                width = int.Parse(Console.ReadLine());
-                two_dimensional.recreation(person, length, width);
+                if (i == 0)
+                {
+                    Console.WriteLine("Весь массив одномерных");
+                }
+                mass[i].print();
             }
-            else if (input == "Step_dimensional")
+            for (int i = 0; i < mass1.Length; i++)
             {
-                Console.WriteLine("Write width of your array:");
-                int width = int.Parse(Console.ReadLine());
-
-                Step_dimensional step_dimensional = new Step_dimensional(person, width);
-                step_dimensional.trird();
-                Console.WriteLine("Write width of your array:");
-                width = int.Parse(Console.ReadLine());
-                step_dimensional.recreation(person, width);
+                if (i == 0)
+                {
+                    Console.WriteLine("Среднее значение одномерных");
+                }
+                mass1[i].getmid();
             }
         }
     }

@@ -8,7 +8,7 @@ namespace _3_3
 {
     interface IBaseInterface : IPrinter
     {
-        int getmid();
-        void print();
+        void getmid();
+        
     }
 }

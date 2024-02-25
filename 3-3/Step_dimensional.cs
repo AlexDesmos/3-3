@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace _3_3
 {
-    sealed class Step_dimensional : Dad_class
+    sealed class Step_dimensional : Dad_class, IStepDim
     {
         private int[][] array;
-        Random rnd = new Random();
+        static private Random rnd = new Random();
 
         public Step_dimensional(bool person, int width)
         {
@@ -63,7 +63,7 @@ namespace _3_3
 
 
         }
-        public void trird()
+        public void third()
         {
             Console.WriteLine("new array:");
             for (int i = 0; i < array.Length; i++)

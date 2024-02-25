@@ -8,8 +8,8 @@ namespace _3_3
 {
     sealed class Two_dimensional : Dad_class, ITwoDim
     {
-        int[,] array;
-        Random rnd = new Random();
+        private int[,] array;
+        static private Random rnd = new Random();
         public Two_dimensional(bool person, int length, int width)
         {
             Initialization(person, length, width);
