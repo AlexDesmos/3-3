@@ -11,22 +11,13 @@ namespace _3_3
         private int[][] array;
         static private Random rnd = new Random();
 
-        public Step_dimensional(bool person, int width)
+        public Step_dimensional(bool person, int width) : base(person)
         {
-            Initialization(person, width);
-        }
-        private void Initialization(bool person, int width)
-        {
-
             array = new int[width][];
-            if (person)
-                userFill();
-            else
-                rndFill();
-            getmid();
-            print();
+            Initialization(person);
         }
-        public override void userFill()
+        
+        protected override void userFill()
         {
 
 
@@ -48,7 +39,7 @@ namespace _3_3
 
 
         }
-        public override void rndFill()
+        protected override void rndFill()
         {
 
 
@@ -107,7 +98,7 @@ namespace _3_3
         }
         public void recreation(bool person, int width)
         {
-            Initialization(person, width);
+            Initialization(person);
         }
         public override void print()
         {

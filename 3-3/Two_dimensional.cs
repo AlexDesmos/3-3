@@ -10,7 +10,7 @@ namespace _3_3
     {
         private int[,] array;
         static private Random rnd = new Random();
-        public Two_dimensional(bool person, int length, int width)
+        public Two_dimensional(bool person, int length, int width) : base(person)
         {
             Initialization(person, length, width);
         }
@@ -25,7 +25,7 @@ namespace _3_3
             getmid();
             print();
         }
-        public override void userFill()
+        protected override void userFill()
         {
 
 
@@ -42,7 +42,7 @@ namespace _3_3
 
 
         }
-        public override void rndFill()
+        protected override void rndFill()
         {
 
 

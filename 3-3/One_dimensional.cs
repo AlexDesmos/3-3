@@ -11,7 +11,7 @@ namespace _3_3
         static private Random rnd = new Random();
         private int[] array;
 
-        public One_dimensional(bool person, int length)
+        public One_dimensional(bool person, int length) : base(person)
         {
             Initialization(person, length);
 
@@ -27,7 +27,7 @@ namespace _3_3
 
             print();
         }
-        public override void userFill()
+        protected override void userFill()
         {
 
 
@@ -40,7 +40,7 @@ namespace _3_3
 
 
         }
-        public override void rndFill()
+        protected override void rndFill()
         {
 
 

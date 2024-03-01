@@ -8,9 +8,27 @@ namespace _3_3
 {
     public abstract class Dad_class : IBaseInterface
     {
+        private bool person { get; set; }
+        protected Dad_class(bool Person)
+        {
+            person = Person;
+        }
+        
         public abstract void getmid();
         public abstract void print();
-        public abstract void userFill();
-        public abstract void rndFill();
+        protected abstract void userFill();
+        protected abstract void rndFill();
+
+        protected void Initialization(bool person)
+        {
+
+            
+            if (person)
+                userFill();
+            else
+                rndFill();
+            getmid();
+            print();
+        }
     }
 }
